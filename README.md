@@ -9,7 +9,7 @@ My personal collection of Claude automations: Claude skills, plus small apps tha
 | `Meeting Ai 2.0/claude_skills/meeting-prep` | meeting-prep | Claude skill | Preps talking points for my next meeting by looking back over the last 1–4 weeks of work |
 | `Meeting Ai 2.0/Meeting Assistant/claude` | meeting-assistant | Claude skill | Summarises Google Meet meetings from their Gemini notes, posts them to Slack, and drafts agendas |
 | `Meeting Ai 2.0/Meeting Assistant/python_app` | Meeting Assistant | Python app | Script version of meeting-assistant that summarises recent meetings and posts agendas to Slack |
-| `Task Planner` | weekly-recap | Claude skill (zip only) | Reviews up to 14 days of past calendar and returns a summary, a prioritised to-do list, Slack drafts and suggestions |
+| `Task Planner/calendar-planner` | calendar-planner | Claude skill | Reviews up to 14 days of past calendar and returns a summary, a prioritised to-do list with Slack drafts, a Google Keep checklist and suggestions |
 
 ## Using the skills
 
