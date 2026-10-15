@@ -1,11 +1,18 @@
 ---
 name: calendar-planner
-description: Review a chosen range (up to 14 days) of the user's past calendar, read event details, notes and attachments, then output a summary, a to-do list grouped by priority and tagged by type and project, short Slack message drafts, and suggestions. Use when the user asks for a recap, a look back at recent meetings, or a to-do list from their calendar.
+description: Review a chosen range (up to 14 days) of the user's past calendar, read event details, notes and attachments, then output a summary, a to-do list grouped by priority and tagged by type and project, short Slack message drafts, a Google Keep checklist, and suggestions. Use when the user asks for a recap, a look back at recent meetings, or a to-do list from their calendar.
 ---
 
 # Calendar Planner
 
 Look back over the user's recent calendar, find what needs follow-up, and hand back a sorted, ready-to-use to-do list in the chat.
+
+## Who the user is
+
+The user is Emmanuel (Emmanuel Olang'). In calendar events, notes and transcripts, "Emmanuel" means the user.
+- Action items given to "Emmanuel" are the user's tasks.
+- Always write to the user as "you". Never call the user "Emmanuel" or refer to them in the third person.
+- When a meeting title includes the user's name (for example "Akshita / Emmanuel"), name the meeting after the other people instead: "Akshita, Oct 13".
 
 ## Step 1: Ask how far back to look
 
@@ -45,7 +52,7 @@ Look for anything that implies the user needs to do something, such as:
 - Open questions that were left unanswered.
 - Deadlines or dates mentioned ("by Friday", "before the launch").
 
-Only include items that belong to the user. Skip tasks clearly owned by someone else unless the user needs to chase them.
+Only include items that belong to the user (including ones assigned to "Emmanuel"). Skip tasks clearly owned by someone else unless the user needs to chase them.
 
 ## Step 5: Categorize each task
 
@@ -68,11 +75,22 @@ Give every task three labels.
 
 ## Step 6: Draft Slack messages
 
-For every task with the type **Message**:
-- Write a short, casual Slack message the user could send as is.
+Write a draft for every task that means contacting someone, whatever its type. This includes:
+- Message tasks.
+- Asking, chasing or confirming something with someone.
+- Booking, moving or setting up a meeting (draft the message asking for a time or setting the agenda).
+- Sharing, sending or handing over a doc, link or result.
+- Giving someone an update or passing something on.
+- Reviewing or deciding something together with someone (draft the message to set it up or share the outcome).
+
+Also draft one for any suggestion that involves contacting someone. Skip a draft only when the task involves nobody else.
+
+For each draft:
+- Write a short, casual Slack message the user could send as is, in the user's voice ("I", not "Emmanuel").
 - Keep it to 1 to 3 sentences. Normal Slack tone. No formal greetings or sign offs.
 - Address it to the right person or channel if known.
-- Do not send anything. Drafts only.
+- Use a [placeholder] for anything you don't know, such as a link or a number. Don't make it up.
+- Never send anything, and don't mention in the reply that nothing was sent.
 
 ## Step 7: Add suggestions
 
@@ -102,18 +120,35 @@ Under each heading, list tasks sorted by due date (soonest first). For each task
 - **Task:** what needs doing
 - **Type:** Message, Meeting, Write, Review, Decision, or Other
 - **Project:** project or topic name
-- **From:** meeting name and date
+- **From:** meeting name and date (named after the other people if the title includes the user's name)
 - **Due:** date if one was mentioned or implied, otherwise "No date"
-- **Slack draft:** (Message tasks only) the draft message
+- **Slack draft:** (any task that involves contacting someone, see Step 6) the draft message
+
+**Google Keep checklist** (paste into a Keep note, then ⋮ → Show checkboxes)
+The same tasks again, in the same order, inside one ```text code block so it can be copied in one go. Keep turns each line into one checkbox item, so:
+- One task per line. No blank lines, bullets, numbers, checkbox symbols or markdown.
+- Start each line with its priority: [Urgent], [This week] or [Later].
+- Add "(due <date>)" after the task only when it has a due date.
+- If the task has a draft, put it at the end of the same line after "Draft:", never on a line of its own.
+
+Example:
+```text
+[Urgent] Review the IRC concept note with Rachel (due Oct 16)
+[This week] Ask Doug for the AI team charge code. Draft: "Hey Doug, could you send me the charge code for AI team work? I need it for my timesheet this week."
+[Later] Write beginner docs for the skills GitHub repo
+```
 
 **Suggestions**
-2 to 5 short bullet points.
+2 to 5 short bullet points. Add a Slack draft to any suggestion that involves contacting someone.
 
 **Skipped**
 List any files or notes that could not be opened. Leave this section out if nothing was skipped.
 
+End the reply with the last section. Add nothing after it: no closing line, sign-off, offer of more help, or note about what was or wasn't sent.
+
 ## Style rules
 
+- Write to the user as "you" throughout.
 - Keep everything plain, simple, and easy to scan.
 - No long explanations.
 - Do not make up tasks, deadlines, or projects that are not supported by the calendar or notes. If something is unclear, mark it as unclear rather than guessing.
