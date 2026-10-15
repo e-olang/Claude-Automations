@@ -1,0 +1,10 @@
+# Secrets and personal files — never commit these
+.env
+client_secret.json
+token.json
+posted.json
+
+__pycache__/
+.pytest_cache/
+.venv/
+*.DS_Store
